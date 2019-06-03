@@ -2,7 +2,7 @@ import pandas as pd
 import os
 import numpy as np
 import matplotlib.pyplot as plt
-os.chdir("/data/home/gpanagopoulos/scientometrics/data")
+os.chdir("/storage/scientometrics/data")
 
 pap_auth = pd.read_csv("paper_author.txt")
 pap_auth["AuthID"] = pap_auth["AuthID"].astype(str)
@@ -89,15 +89,3 @@ pap = pap.drop(pap.columns[[1,3,4]],axis=1)
 pap_auth = pap.merge(pap_auth,on="PapID")
 
 pap_auth.to_csv("clean_paper_authors.txt",index=False)
-
-
-"""
-pap_auth = pd.read_csv("paper_author.txt")
-pap_auth["AuthID"] = pap_auth["AuthID"].astype(str)
-all_auths = pap_auth["AuthID"].unique()
-del pap_auth
-x = pd.read_csv("ambig_one_paper_authors.csv").values()
-to_store = np.setdiff1d(all_auths,x)
-
-to_store.to_csv("authors_to_keep.csv",index=False,header=False)
-"""

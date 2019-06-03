@@ -1,6 +1,6 @@
 import os
 import pandas as pd
-os.chdir("/storage3/dcore")
+os.chdir("/storage/dcore")
 
 def find_top(dat,names,degree,name):
     dat.columns = ["incr"]
@@ -13,7 +13,7 @@ def find_top(dat,names,degree,name):
 
 
 names = pd.read_csv("incr_names.csv")
-degree = pd.read_csv("/storage2/mag10/auth_degree_10.txt",sep="\t",header=None)
+degree = pd.read_csv("/storage/mag10/auth_degree_10.txt",sep="\t",header=None)
 degree.columns = ["out","in"]
 degree["deg"]  = degree["out"]+degree["in"]
 

@@ -3,7 +3,7 @@ from pyspark.sql.functions import count, avg
 with open('names.txt', 'r') as f:
 	filenames = [line.replace("\n", "") for line in f]
 
-authors = spark.read.csv('hdfs:///user/gpanagop/clean_paper_authors.txt', header=False)
+authors = spark.read.csv(''hdfs:///user/clean_paper_authors.txt', header=False)
 authors = authors.selectExpr("_c0 as Paper", "_c1 as PapAuthor")
 
 
@@ -18,4 +18,4 @@ for batch in range(start, len(filenames), step):
 	print("Batch: ", batch)
 	joined = authors.join(concat, "Paper")
 	joined = joined.drop("Paper")
-	joined.groupBy("Author", "PapAuthor").agg(count("*")).repartition(1).write.csv("hdfs:///user/ksypo/citationsOutput/" + str(batch))
+	joined.groupBy("Author", "PapAuthor").agg(count("*")).repartition(1).write.csv("hdfs:///user/citationsOutput/" + str(batch))

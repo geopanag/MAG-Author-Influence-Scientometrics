@@ -1,6 +1,6 @@
 import os
 import pandas as pd
-os.chdir("/storage3/dcore")
+os.chdir("/storage/dcore")
 
 names = pd.read_csv("incr_names.csv")
 pad = pd.read_csv('author_frontiers_groupby.csv', sep=' ',header=None)

@@ -2,7 +2,7 @@ import pandas as pd
 import os
 import numpy as np
 import matplotlib.pyplot as plt
-os.chdir("/data/home/gpanagopoulos/scientometrics/data")
+os.chdir("/data/")
 
 auth = pd.read_csv("authors.txt")
 auth = auth.ix[auth.columns[0,2]]

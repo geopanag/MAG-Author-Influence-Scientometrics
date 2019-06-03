@@ -2,7 +2,7 @@ import pandas as pd
 import os
 import numpy as np
 import matplotlib.pyplot as plt
-os.chdir("/data/home/gpanagopoulos/scientometrics/data")
+os.chdir("/data/")
 
 pap_auth = pd.read_csv("clean_paper_authors.txt")
 pap_auth = pap_auth.loc[pap_auth["Cit"]!=0,:]
@@ -39,7 +39,7 @@ dat.columns = ["author","hindex"]
 dat["surname"] = dat["author"].apply(lambda x:x.split(" ")[-1])
 dat.to_csv("final_hindex.csv",index=False)
 
-dat.shape
+print(dat.shape)
 dat[dat['name'].str.contains('barabasi')] # 128
 dat[dat['name'].str.contains('karypis')] # 73
 dat[dat['name'].str.contains('varlamis')] # 15

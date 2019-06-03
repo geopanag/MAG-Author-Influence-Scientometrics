@@ -1,28 +1,10 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Mon May  6 18:10:35 2019
-
-@author: georg
-"""
-
-#https://stackoverflow.com/questions/31925572/python-pandas-merge-or-filter-dataframe-by-another-is-there-a-better-way
 
 import os 
 import pandas as pd
 import json
 
 os.chdir("/storage/scientometrics/data")
-#names = pd.read_csv("ambig_one_paper_authors.csv",header=None)
-#pap_auth = pd.read_csv("clean_paper_authors.txt",header=None)
-
-#pap_auth.columns = ["paper","author"]
-#names.columns = ["author"]
-
-#pap_auth = pap_auth["author"].unique()
-#pap_auth = pd.DataFrame(pap_auth)
-#pap_auth.columns=["author"]
-#pap_auth = pap_auth.set_index("author")
-#to_keep = pap_auth[~pap_auth.index.isin(names.index)].reset_index()
 
 keep = pd.read_csv("authors_to_keep.csv",header=None) 
 keep.columns = ["id"]
@@ -106,13 +88,11 @@ author_indegree = [0] * size
 print("now creating edgelists")
 
 idx = 0
-#f=open('incr_filtered_mag.csv','r')
 f = open("incr_fil_mag10.csv","r")
 
 
 for line in f:
     idx+=1
-    #t=list(map(int,line.strip().split(",")))
     t=line.strip().split(',')
     
     #if max(t)>m:

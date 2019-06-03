@@ -1,7 +1,7 @@
 import json
 import os
 
-os.chdir("/storage2/mag10")
+os.chdir("/storage/mag10")
 
 with open("incr_authors10.json","r") as f:
     auth = json.load(f)

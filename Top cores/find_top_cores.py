@@ -1,5 +1,5 @@
 import os
-os.chdir("/storage3/dcore/")
+os.chdir("/storage/dcore/")
 
 f = open("all_names.txt","r")
 

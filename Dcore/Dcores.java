@@ -137,7 +137,7 @@ public class cores2{
 			int outT=1;
 			int inT=1;
 			
-			cores2 c=new cores2("./mag_outgraph_sample.txt","./mag_ingraph_sample.txt","./auth_degree_sample.txt");
+			cores2 c=new cores2("./mag_outgraph.txt","./mag_ingraph.txt","./auth_degree.txt");
 			while (c.size()>0){
 				c.compute(0,outT);
 				ObjectOutputStream oi=new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream("./cache2/core_"+0+"_"+outT+".ids")));
@@ -151,7 +151,7 @@ public class cores2{
 			
 			
 			//c=new cores2("./smgraph_T.txt","./rsmgraph_T.txt","./smdegree_T.txt");
-			c=new cores2("./mag_outgraph_sample.txt","./mag_ingraph_sample.txt","./auth_degree_sample.txt");
+			c=new cores2("./mag_outgraph.txt","./mag_ingraph.txt","./auth_degree.txt");
 			while (c.size()>0){
 				c.compute(inT,0);
 				ObjectOutputStream oi=new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream("./cache2/core_"+inT+"_"+0+".ids")));
@@ -161,9 +161,8 @@ public class cores2{
 				c.saveIDS("./cores_onlyNodes2/core_"+inT+"_"+0+".txt");
 				inT++;
 			}
-			//System.out.println("Done in");
 			
-			
+			// break this in multiple ranges for different cores
 			for (int i=1;i<inT;i++){
 				ObjectInputStream fo=new ObjectInputStream(new BufferedInputStream(new FileInputStream("./cache2/core_"+i+"_0.ids")));
 				ObjectInputStream fw=new ObjectInputStream(new BufferedInputStream(new FileInputStream("./cache2/core_"+i+"_0.w")));

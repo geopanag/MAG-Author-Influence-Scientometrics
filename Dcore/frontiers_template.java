@@ -14,7 +14,7 @@ import java.util.Map;
 public class frontiers_template {
 
     private static final int STEP = 10;
-    private static final String zerosDirectory = "/storage2/mag10/cores_onlyNodes2";
+    private static final String zerosDirectory = "/storage/mag10/cores_onlyNodes2";
 
     private static void iterate(String directory, int start, int end, PrintWriter core_sizes, PrintWriter author_frontiers) throws FileNotFoundException, IOException, Exception {
         BufferedReader fo = null;
@@ -85,8 +85,8 @@ public class frontiers_template {
 
     public static void main(String[] args) throws FileNotFoundException, IOException, Exception {
         // list of author - frontiers size = 9007172
-        PrintWriter author_frontiers = new PrintWriter(new File("/storage3/dcore/author_frontiers_ids43.csv"));
-        PrintWriter core_sizes = new PrintWriter(new File("/storage3/dcore/core_sizes_ids43.csv"));
+        PrintWriter author_frontiers = new PrintWriter(new File("/storage/dcore/author_frontiers_ids43.csv"));
+        PrintWriter core_sizes = new PrintWriter(new File("/storage/dcore/core_sizes_ids43.csv"));
         String directory;
         int start, end;
 //        storage2:
@@ -98,13 +98,13 @@ public class frontiers_template {
 //        cores_ids4      : 7598 -> 7859
 
         // Directory /storage3/cores_ids4
-        directory = "/storage3/dcore/cores_ids4";
+        directory = "/storage/dcore/cores_ids4";
         start = 7860;
         end = 7598;
         iterate(directory, start, end, core_sizes, author_frontiers);
 
         // Directory storage3/cores_ids3
-        directory = "/storage3/dcore/cores_ids3";
+        directory = "/storage/dcore/cores_ids3";
         start = 7597;
         end = 5609;
         iterate(directory, start, end, core_sizes, author_frontiers);
