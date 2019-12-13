@@ -4,7 +4,7 @@ This is the code to reproduce the analysis performed for the development of [our
 
 The dcore code employed can be found at https://bitbucket.org/xristosakamad/aminer_dcores. and the data from the [microsoft academic graph](https://docs.microsoft.com/en-us/academic-services/graph/reference-data-schema).
 
-Please here if you use it:
+Please cite here if you use it:
 ``` bash
 @inproceedings{panagopoulos2019scientometrics,
   title={Scientometrics for Success and Influence in the Microsoft Academic Graph},
